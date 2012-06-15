@@ -138,6 +138,7 @@ struct redisCommand readonlyCommandTable[] = {
     {"hsetnx",hsetnxCommand,4,REDIS_CMD_DENYOOM,NULL,1,1,1},
     {"hget",hgetCommand,3,0,NULL,1,1,1},
     {"hmset",hmsetCommand,-4,REDIS_CMD_DENYOOM,NULL,1,1,1},
+    {"hmsetnx",hmsetnxCommand,-4,REDIS_CMD_DENYOOM,NULL,1,1,1},
     {"hmget",hmgetCommand,-3,0,NULL,1,1,1},
     {"hincrby",hincrbyCommand,4,REDIS_CMD_DENYOOM,NULL,1,1,1},
     {"hdel",hdelCommand,-3,0,NULL,1,1,1},

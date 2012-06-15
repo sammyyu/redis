@@ -1050,6 +1050,7 @@ void hsetCommand(redisClient *c);
 void hsetnxCommand(redisClient *c);
 void hgetCommand(redisClient *c);
 void hmsetCommand(redisClient *c);
+void hmsetnxCommand(redisClient *c);
 void hmgetCommand(redisClient *c);
 void hdelCommand(redisClient *c);
 void hlenCommand(redisClient *c);
