@@ -132,6 +132,22 @@ start_server {tags {"hash"}} {
         r hmset bighash {*}$args
     } {OK}
 
+    test "HMSETNX - set empty hash" {
+        r del hash
+        assert_equal 1 [r hmsetnx hash key1 value1]
+        assert_equal "value1" [r hmget hash key1]
+    }
+
+    test "HMSETNX - set existing hash" {
+        r del hash
+        assert_equal 1 [r hmsetnx hash key1 value1]
+        assert_equal 0 [r hmsetnx hash key1 newvalue1 key2 value2]
+        assert_equal "value1" [r hmget hash key1]
+        assert_equal 0 [r hexists hash key2]
+        assert_equal 1 [r hmsetnx hash key2 value2]
+        assert_equal 1 [r hexists hash key2]
+    }
+
     test {HMGET against non existing key and fields} {
         set rv {}
         lappend rv [r hmget doesntexist __123123123__ __456456456__]
