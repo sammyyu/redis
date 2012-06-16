@@ -668,6 +668,7 @@ typedef struct {
 
 #define REDIS_HASH_KEY 1
 #define REDIS_HASH_VALUE 2
+#define REDIS_HASH_MATCH 4
 
 /*-----------------------------------------------------------------------------
  * Extern declarations
@@ -1058,6 +1059,7 @@ void zremrangebyrankCommand(redisClient *c);
 void zunionstoreCommand(redisClient *c);
 void zinterstoreCommand(redisClient *c);
 void hkeysCommand(redisClient *c);
+void hkeys2Command(redisClient *c);
 void hvalsCommand(redisClient *c);
 void hgetallCommand(redisClient *c);
 void hexistsCommand(redisClient *c);

@@ -144,6 +144,7 @@ struct redisCommand readonlyCommandTable[] = {
     {"hdel",hdelCommand,-3,0,NULL,1,1,1},
     {"hlen",hlenCommand,2,0,NULL,1,1,1},
     {"hkeys",hkeysCommand,2,0,NULL,1,1,1},
+    {"hkeys2",hkeys2Command,3,0,NULL,1,1,1},
     {"hvals",hvalsCommand,2,0,NULL,1,1,1},
     {"hgetall",hgetallCommand,2,0,NULL,1,1,1},
     {"hexists",hexistsCommand,3,0,NULL,1,1,1},
